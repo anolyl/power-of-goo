@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/MusicAndSounds/MotherMaiden/evil-demonic-laugh-6925.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/MusicAndSounds/OtherSounds/mixkit-fridge-motor-hum-1865.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sprites/fog01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scripts/FogBarrierRoom_2.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 10, 62 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 18, 53 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "textFadeInAndOut"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="FogBarrier" type="StaticBody2D"]
+position = Vector2( 632, -2412 )
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -0.928998, 0.155487 )
+rotation = 1.5708
+scale = Vector2( 0.127839, 0.0485777 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -4.5, 44.484, 1234.36, 949.239 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 2, 0 )
+shape = SubResource( 15 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "A dark force blocks your path. It seems something does not want you to leave."
+align = 1
+
+[node name="EvilLaugh" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -28, 163 )
+stream = ExtResource( 2 )
+volume_db = -30.0
+bus = "ReverbSFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 17 )
+anims/textFadeInAndOut = SubResource( 18 )
+
+[node name="LowHum" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = true
+bus = "ReverbSFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

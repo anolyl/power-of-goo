@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scenes/Zones/zoomZone.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="zoomZone" type="StaticBody2D"]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.0666667, 1, 0.133333, 1 )
+scale = Vector2( 0.940224, 0.982681 )
+shape = SubResource( 1 )
+one_way_collision = true

@@ -1,0 +1,178 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Menu/ButtonTheme/NewGameButton.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Menu/ButtonTheme/QuitAndBack.tres" type="Theme" id=3]
+[ext_resource path="res://UI/Menu/ButtonTheme/Credits.tres" type="Theme" id=4]
+[ext_resource path="res://UI/Menu/ButtonTheme/Tapes/SingleTape3.png" type="Texture" id=5]
+[ext_resource path="res://UI/Menu/OptionsMenu/OptionsMenu.gd" type="Script" id=6]
+[ext_resource path="res://UI/Menu/ButtonTheme/Settings.tres" type="Theme" id=7]
+[ext_resource path="res://UI/Menu/OptionsMenu/SubOptions/SubOptionsSound/Sub_Options_Sound.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Pressed/Tape3.png" type="Texture" id=9]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Hover/Tape3.png" type="Texture" id=10]
+[ext_resource path="res://UI/Menu/OptionsMenu/SubOptions/SubOptionsVideo/Sub_Options_Video.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/Menu/OptionsMenu/SubOptions/SubOptionsControll/Sub_Options_Control.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 10 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 5 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 9 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="Theme" id=8]
+Button/styles/focus = SubResource( 9 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 12 )
+
+[node name="Options_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+subOptionsSoundMenuTemplate = ExtResource( 8 )
+subOptionsVideoMenuTemplate = ExtResource( 11 )
+subOptionsControlMenuTemplate = ExtResource( 12 )
+
+[node name="Suboptions" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="OptionsMenu" type="VBoxContainer" parent="."]
+margin_right = 373.0
+margin_bottom = 360.0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="OptionsMenu"]
+margin_right = 390.0
+margin_bottom = 77.0
+
+[node name="OptionMarginContainer" type="MarginContainer" parent="OptionsMenu/OptionsContainer"]
+margin_right = 390.0
+margin_bottom = 77.0
+custom_constants/margin_right = 119
+custom_constants/margin_top = 38
+custom_constants/margin_left = 67
+custom_constants/margin_bottom = 14
+
+[node name="OptionsLabel" type="Label" parent="OptionsMenu/OptionsContainer/OptionMarginContainer"]
+margin_left = 67.0
+margin_top = 38.0
+margin_right = 271.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 150, 25 )
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="SoundContainer" type="VBoxContainer" parent="OptionsMenu"]
+margin_top = 81.0
+margin_right = 390.0
+margin_bottom = 131.0
+
+[node name="SoundMarginContainer" type="MarginContainer" parent="OptionsMenu/SoundContainer"]
+margin_right = 390.0
+margin_bottom = 50.0
+custom_constants/margin_right = 94
+custom_constants/margin_top = 0
+custom_constants/margin_left = 98
+custom_constants/margin_bottom = 0
+
+[node name="SoundButton" type="Button" parent="OptionsMenu/SoundContainer/SoundMarginContainer"]
+margin_left = 98.0
+margin_right = 296.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Sound"
+expand_icon = true
+
+[node name="VideoContainer" type="VBoxContainer" parent="OptionsMenu"]
+margin_top = 135.0
+margin_right = 390.0
+margin_bottom = 177.0
+
+[node name="VideoMarginContainer" type="MarginContainer" parent="OptionsMenu/VideoContainer"]
+margin_right = 390.0
+margin_bottom = 42.0
+custom_constants/margin_right = 135
+custom_constants/margin_top = -6
+custom_constants/margin_left = 77
+custom_constants/margin_bottom = -2
+
+[node name="VideoButton" type="Button" parent="OptionsMenu/VideoContainer/VideoMarginContainer"]
+margin_left = 77.0
+margin_top = -6.0
+margin_right = 255.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Video"
+
+[node name="ControlContainer" type="VBoxContainer" parent="OptionsMenu"]
+margin_top = 181.0
+margin_right = 390.0
+margin_bottom = 228.0
+
+[node name="ControlMarginContainer" type="MarginContainer" parent="OptionsMenu/ControlContainer"]
+margin_right = 390.0
+margin_bottom = 47.0
+custom_constants/margin_right = 78
+custom_constants/margin_top = 1
+custom_constants/margin_left = 138
+
+[node name="ControlButton" type="Button" parent="OptionsMenu/ControlContainer/ControlMarginContainer"]
+margin_left = 138.0
+margin_top = 1.0
+margin_right = 312.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 153, 46 )
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Controls"
+
+[node name="BackContainer" type="VBoxContainer" parent="OptionsMenu"]
+margin_top = 232.0
+margin_right = 390.0
+margin_bottom = 278.0
+
+[node name="BackMarginContainer" type="MarginContainer" parent="OptionsMenu/BackContainer"]
+margin_right = 390.0
+margin_bottom = 46.0
+custom_constants/margin_right = 165
+custom_constants/margin_top = 6
+custom_constants/margin_left = 97
+
+[node name="BackButton" type="Button" parent="OptionsMenu/BackContainer/BackMarginContainer"]
+margin_left = 97.0
+margin_top = 6.0
+margin_right = 225.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+
+[connection signal="pressed" from="OptionsMenu/SoundContainer/SoundMarginContainer/SoundButton" to="." method="_on_SoundButton_pressed"]
+[connection signal="pressed" from="OptionsMenu/VideoContainer/VideoMarginContainer/VideoButton" to="." method="_on_VideoButton_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlContainer/ControlMarginContainer/ControlButton" to="." method="_on_ControlButton_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]

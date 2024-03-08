@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-fridge-motor-hum-1865.mp3-07f99441d66c088b75feacc2486e82b4.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/OtherSounds/mixkit-fridge-motor-hum-1865.mp3"
+dest_files=[ "res://.import/mixkit-fridge-motor-hum-1865.mp3-07f99441d66c088b75feacc2486e82b4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

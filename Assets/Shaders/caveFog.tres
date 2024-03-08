@@ -1,0 +1,56 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+uniform int octaves = 4;
+uniform int pixelateAmount = 40;
+
+uniform float startingAmplitude: hint_range(0.0, 0.5) = 0.5;
+uniform float startingFrequency = 1.0;
+uniform float shift: hint_range(-1.0, 0.0) = -0.2;
+
+uniform vec2 velocity = vec2(1.0, 1.0);
+uniform vec4 fogColor: hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+uniform sampler2D noise;
+
+float rand(vec2 uv) {
+	float amplitude = startingAmplitude;
+	float frequency = startingFrequency;
+	float output = 0.0;
+	for (int i = 0; i < octaves; i++) {
+		output += texture(noise, uv * frequency).x * amplitude;
+		amplitude /= 2.0;
+		frequency *= 2.0;
+	}
+	return clamp(output + shift, 0.0, 1.0);
+}
+
+void fragment() {
+	vec2 motion = vec2(rand(UV + TIME * startingFrequency * velocity));
+	COLOR = mix(vec4(0.0), fogColor, rand(UV + motion * round(UV * float(pixelateAmount) * float(pixelateAmount))));
+}"
+
+[sub_resource type="OpenSimplexNoise" id=13]
+octaves = 1
+period = 62.5
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=12]
+resource_local_to_scene = true
+seamless = true
+noise = SubResource( 13 )
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 10 )
+shader_param/octaves = 1
+shader_param/pixelateAmount = 26
+shader_param/startingAmplitude = 0.5
+shader_param/startingFrequency = 0.128
+shader_param/shift = -0.236
+shader_param/velocity = Vector2( 0.257, 0.04 )
+shader_param/fogColor = Color( 0, 0, 0, 1 )
+shader_param/noise = SubResource( 12 )

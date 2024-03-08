@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-arctic-winds-1154.wav-3e97bf5fad4d202fadd69ca927b4c00d.sample"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/BGM/mixkit-arctic-winds-1154.wav"
+dest_files=[ "res://.import/mixkit-arctic-winds-1154.wav-3e97bf5fad4d202fadd69ca927b4c00d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

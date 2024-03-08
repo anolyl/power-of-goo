@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/Cave_Background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/NewTests/Cave_Front_pillars.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/Cave_Second_layer.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/Cave_third_layer.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/NewTests/Cave_front_up_laye2r (2).png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/Cave_Single_pillar.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/NewTests/Cave_front_up_layer.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/Cave_Background_pillars.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Background/CaveBackground/New/NewTests/Cave_front_up_laye2r (1).png" type="Texture" id=9]
+[ext_resource path="res://Fog.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+uniform int octaves = 4;
+uniform int pixelateAmount = 40;
+
+uniform float startingAmplitude: hint_range(0.0, 0.5) = 0.5;
+uniform float startingFrequency = 1.0;
+uniform float shift: hint_range(-1.0, 0.0) = -0.2;
+
+uniform vec2 velocity = vec2(1.0, 1.0);
+uniform vec4 fogColor: hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+uniform sampler2D noise;
+
+float rand(vec2 uv) {
+	float amplitude = startingAmplitude;
+	float frequency = startingFrequency;
+	float output = 0.0;
+	for (int i = 0; i < octaves; i++) {
+		output += texture(noise, uv * frequency).x * amplitude;
+		amplitude /= 2.0;
+		frequency *= 2.0;
+	}
+	return clamp(output + shift, 0.0, 1.0);
+}
+
+void fragment() {
+	vec2 motion = vec2(rand(UV + TIME * startingFrequency * velocity));
+	COLOR = mix(vec4(0.0), fogColor, rand(UV + motion * round(UV * float(pixelateAmount) * float(pixelateAmount))));
+}"
+
+[sub_resource type="OpenSimplexNoise" id=13]
+
+[sub_resource type="NoiseTexture" id=12]
+resource_local_to_scene = true
+seamless = true
+noise = SubResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=14]
+resource_local_to_scene = true
+shader = SubResource( 10 )
+shader_param/octaves = 18
+shader_param/pixelateAmount = 14
+shader_param/startingAmplitude = 0.5
+shader_param/startingFrequency = -0.083
+shader_param/shift = -0.28
+shader_param/velocity = Vector2( 0.399, 0.011 )
+shader_param/fogColor = Color( 0.427451, 0.368627, 0.819608, 1 )
+shader_param/noise = SubResource( 12 )
+
+[sub_resource type="OpenSimplexNoise" id=16]
+
+[sub_resource type="NoiseTexture" id=17]
+resource_local_to_scene = true
+noise = SubResource( 16 )
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 1280, 720 )
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_base_offset = Vector2( 199.138, -35.03 )
+scroll_base_scale = Vector2( 0.181, 0.05 )
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.103, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxLayer9"]
+modulate = Color( 0.858824, 0.858824, 0.858824, 1 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer9"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Sprite3" parent="ParallaxLayer9" instance=ExtResource( 10 )]
+modulate = Color( 0.619608, 0.576471, 0.576471, 1 )
+material = SubResource( 14 )
+position = Vector2( 472.503, 276.558 )
+rotation = -0.000980469
+scale = Vector2( 2.50157, 1.26897 )
+texture = SubResource( 17 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.158, 0.95 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxLayer8"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer8"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.158, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxLayer10"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer10"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="FrontBottom1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.239, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite3" type="Sprite" parent="FrontBottom1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="FrontBottom1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="FrontBottom2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.239, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite3" type="Sprite" parent="FrontBottom2"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="FrontBottom2"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="FrontBottom2"]
+modulate = Color( 0.0156863, 0.0156863, 0.0745098, 1 )
+position = Vector2( 640, -360 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="FrontBottom2"]
+modulate = Color( 0.0156863, 0.0156863, 0.0745098, 1 )
+position = Vector2( 640, 1000 )
+mesh = SubResource( 1 )

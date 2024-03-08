@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2019-06-14_-_Warm_Light_-_David_Fesliyan.mp3-c888bbbdbf7d00bca1c6540c3e6288ac.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/BGM/2019-06-14_-_Warm_Light_-_David_Fesliyan.mp3"
+dest_files=[ "res://.import/2019-06-14_-_Warm_Light_-_David_Fesliyan.mp3-c888bbbdbf7d00bca1c6540c3e6288ac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

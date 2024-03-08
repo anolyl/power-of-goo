@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Page4.wav-5307b32bfb26f46be2c0353f7e8d10ac.sample"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/IntroSequence/Page4.wav"
+dest_files=[ "res://.import/Page4.wav-5307b32bfb26f46be2c0353f7e8d10ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

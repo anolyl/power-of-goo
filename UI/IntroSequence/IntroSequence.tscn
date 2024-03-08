@@ -1,0 +1,227 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://UI/Menu/Cutscene/Skip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MusicAndSounds/IntroSequence/Page1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_11.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_9.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_12.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_8.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_6.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_5.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_7.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/IntroSequenceImages/illustration_page_10.png" type="Texture" id=14]
+[ext_resource path="res://Assets/MusicAndSounds/IntroSequence/BackgroundSound0.1.wav" type="AudioStream" id=15]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0056.png" type="Texture" id=24]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0077.png" type="Texture" id=25]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0062.png" type="Texture" id=27]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0069.png" type="Texture" id=28]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0064.png" type="Texture" id=32]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0068.png" type="Texture" id=34]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0072.png" type="Texture" id=35]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0065.png" type="Texture" id=41]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0057.png" type="Texture" id=42]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0058.png" type="Texture" id=43]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0076.png" type="Texture" id=44]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0061.png" type="Texture" id=45]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0075.png" type="Texture" id=46]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0054.png" type="Texture" id=47]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0081.png" type="Texture" id=48]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0053.png" type="Texture" id=49]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0055.png" type="Texture" id=53]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0060.png" type="Texture" id=54]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0070.png" type="Texture" id=55]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0067.png" type="Texture" id=58]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0059.png" type="Texture" id=60]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0074.png" type="Texture" id=61]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0066.png" type="Texture" id=64]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0063.png" type="Texture" id=65]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0073.png" type="Texture" id=67]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0071.png" type="Texture" id=68]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0079.png" type="Texture" id=72]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0052.png" type="Texture" id=79]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0078.png" type="Texture" id=81]
+[ext_resource path="res://UI/MainMenu/newBookBackground/Boss_Spike_Anim.glb0080.png" type="Texture" id=82]
+[ext_resource path="res://UI/IntroSequence/IntroSequence.gd" type="Script" id=85]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 79 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 24 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 60 ), ExtResource( 54 ), ExtResource( 45 ), ExtResource( 27 ), ExtResource( 65 ), ExtResource( 32 ), ExtResource( 41 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 55 ), ExtResource( 68 ), ExtResource( 35 ), ExtResource( 67 ), ExtResource( 61 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 25 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 82 ), ExtResource( 48 ) ],
+"loop": false,
+"name": "openBook",
+"speed": 20.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Images:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Book:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 7 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "flipPage"
+length = 0.75
+step = 0.024
+tracks/0/type = "value"
+tracks/0/path = NodePath("Images:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Book:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.024, 0.048, 0.072, 0.096, 0.12, 0.144, 0.168, 0.192, 0.216, 0.24, 0.264, 0.288, 0.312, 0.336, 0.36, 0.384, 0.408, 0.432, 0.456, 0.48, 0.504, 0.528, 0.552, 0.576, 0.6, 0.624, 0.648, 0.672, 0.696, 0.72, 0.744 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 0, 1, 2, 3, 4, 5, 6, 7, 9 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "hideImage"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Images:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "showImage"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Images:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "plotFrames",
+"speed": 5.0
+} ]
+
+[node name="IntroSequence" type="Node2D"]
+script = ExtResource( 85 )
+
+[node name="Book" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.335, 0.335 )
+frames = SubResource( 1 )
+animation = "openBook"
+frame = 7
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/fade_in = SubResource( 3 )
+anims/flipPage = SubResource( 4 )
+anims/hideImage = SubResource( 7 )
+anims/showImage = SubResource( 6 )
+
+[node name="Images" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 185, 181.5 )
+scale = Vector2( 0.338272, 0.33432 )
+frames = SubResource( 5 )
+animation = "plotFrames"
+
+[node name="VoiceLines" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -16.605
+bus = "SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -21.0
+autoplay = true
+bus = "Music"
+
+[node name="Control" parent="." instance=ExtResource( 1 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_left = 34.0
+margin_top = 351.0
+margin_right = 34.0
+margin_bottom = 351.0
+
+[connection signal="finished" from="VoiceLines" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="skip" from="Control" to="." method="_on_Control_skip"]

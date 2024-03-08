@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ghostbreath.mp3-a51104be5e5ca73c61b76292fbcc1f44.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/FlyingEnemy/ghostbreath.mp3"
+dest_files=[ "res://.import/ghostbreath.mp3-a51104be5e5ca73c61b76292fbcc1f44.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sprites/CageEscape.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/CaslonAntique.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Scenes/UI/CageCount.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="cageHUD" type="TextureRect"]
+modulate = Color( 1, 1, 1, 0.701961 )
+margin_left = 88.5
+margin_top = 26.0
+margin_right = 106.5
+margin_bottom = 44.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 11.5
+margin_top = 12.0
+margin_right = 52.5
+margin_bottom = 81.0
+rect_scale = Vector2( 0.296797, 0.296797 )
+custom_fonts/font = SubResource( 1 )
+text = "0
+"

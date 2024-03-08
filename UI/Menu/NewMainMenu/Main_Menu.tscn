@@ -1,0 +1,203 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Menu/ButtonTheme/Tapes/SingleTape1 (1).png" type="Texture" id=2]
+[ext_resource path="res://UI/Menu/ButtonTheme/NewGameButton.tres" type="Theme" id=3]
+[ext_resource path="res://UI/Menu/ButtonTheme/Tapes/SingleTape3.png" type="Texture" id=4]
+[ext_resource path="res://UI/Menu/ButtonTheme/Credits.tres" type="Theme" id=5]
+[ext_resource path="res://UI/Menu/ButtonTheme/QuitAndBack.tres" type="Theme" id=6]
+[ext_resource path="res://UI/Menu/NewMainMenu/Main_Menu.gd" type="Script" id=7]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Hover/Tape1.png" type="Texture" id=8]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Pressed/Tape1.png" type="Texture" id=9]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/SingleTape1 (1).png" type="Texture" id=10]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Pressed/Tape3.png" type="Texture" id=11]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Hover/Tape3.png" type="Texture" id=12]
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 10 )
+region_rect = Rect2( 198.05, 123.17, 614.708, 213.098 )
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 8 )
+region_rect = Rect2( 198.05, 123.17, 614.708, 213.098 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 2 )
+region_rect = Rect2( 198.05, 123.17, 614.708, 213.098 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 9 )
+region_rect = Rect2( 198.05, 123.17, 614.708, 213.098 )
+
+[sub_resource type="Theme" id=6]
+Button/styles/disabled = SubResource( 15 )
+Button/styles/focus = SubResource( 16 )
+Button/styles/hover = SubResource( 12 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 12 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 11 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="Theme" id=8]
+Button/styles/focus = SubResource( 17 )
+Button/styles/hover = SubResource( 18 )
+Button/styles/normal = SubResource( 10 )
+Button/styles/pressed = SubResource( 19 )
+
+[node name="Main_Menu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -321.0
+margin_top = -180.0
+margin_right = 323.0
+margin_bottom = 180.0
+script = ExtResource( 7 )
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+margin_right = 373.0
+margin_bottom = 360.0
+
+[node name="Continue_Container" type="VBoxContainer" parent="MainMenu"]
+margin_right = 391.0
+margin_bottom = 102.0
+
+[node name="ContinueMarginContainer" type="MarginContainer" parent="MainMenu/Continue_Container"]
+margin_right = 391.0
+margin_bottom = 102.0
+custom_constants/margin_right = 119
+custom_constants/margin_top = 38
+custom_constants/margin_left = 67
+custom_constants/margin_bottom = -11
+
+[node name="ContinueContainer" type="Button" parent="MainMenu/Continue_Container/ContinueMarginContainer"]
+margin_left = 67.0
+margin_top = 38.0
+margin_right = 272.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 205, 75 )
+theme = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+disabled = true
+text = "Continue"
+icon_align = 1
+
+[node name="NewGameContainer" type="VBoxContainer" parent="MainMenu"]
+margin_top = 106.0
+margin_right = 391.0
+margin_bottom = 156.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/NewGameContainer"]
+margin_right = 391.0
+margin_bottom = 50.0
+custom_constants/margin_right = 94
+custom_constants/margin_top = 0
+custom_constants/margin_left = 98
+custom_constants/margin_bottom = 0
+
+[node name="NewGameButton" type="Button" parent="MainMenu/NewGameContainer/MarginContainer"]
+margin_left = 98.0
+margin_right = 297.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "New Game"
+expand_icon = true
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MainMenu"]
+margin_top = 160.0
+margin_right = 391.0
+margin_bottom = 202.0
+
+[node name="OptionsMarginContainer" type="MarginContainer" parent="MainMenu/OptionsContainer"]
+margin_right = 391.0
+margin_bottom = 42.0
+custom_constants/margin_right = 135
+custom_constants/margin_top = -6
+custom_constants/margin_left = 77
+custom_constants/margin_bottom = -2
+
+[node name="OptionsButton" type="Button" parent="MainMenu/OptionsContainer/OptionsMarginContainer"]
+margin_left = 77.0
+margin_top = -6.0
+margin_right = 256.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Options"
+
+[node name="CreditsContainer" type="VBoxContainer" parent="MainMenu"]
+margin_top = 206.0
+margin_right = 391.0
+margin_bottom = 253.0
+
+[node name="CreditsMarginContainer" type="MarginContainer" parent="MainMenu/CreditsContainer"]
+margin_right = 391.0
+margin_bottom = 47.0
+custom_constants/margin_right = 78
+custom_constants/margin_top = 1
+custom_constants/margin_left = 138
+
+[node name="CreditsButton" type="Button" parent="MainMenu/CreditsContainer/CreditsMarginContainer"]
+margin_left = 138.0
+margin_top = 1.0
+margin_right = 313.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 153, 46 )
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Credits"
+
+[node name="QuitContainer" type="VBoxContainer" parent="MainMenu"]
+margin_top = 257.0
+margin_right = 391.0
+margin_bottom = 303.0
+
+[node name="QuitMarginContainer" type="MarginContainer" parent="MainMenu/QuitContainer"]
+margin_right = 391.0
+margin_bottom = 46.0
+custom_constants/margin_right = 165
+custom_constants/margin_top = 6
+custom_constants/margin_left = 97
+
+[node name="QuitButton" type="Button" parent="MainMenu/QuitContainer/QuitMarginContainer"]
+margin_left = 97.0
+margin_top = 6.0
+margin_right = 226.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Quit"
+
+[connection signal="pressed" from="MainMenu/Continue_Container/ContinueMarginContainer/ContinueContainer" to="." method="_on_ContinueContainer_pressed"]
+[connection signal="pressed" from="MainMenu/NewGameContainer/MarginContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsContainer/OptionsMarginContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MainMenu/CreditsContainer/CreditsMarginContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="MainMenu/QuitContainer/QuitMarginContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

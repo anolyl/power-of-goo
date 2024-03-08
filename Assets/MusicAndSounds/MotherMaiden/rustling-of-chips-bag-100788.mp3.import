@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rustling-of-chips-bag-100788.mp3-a4a3f34978157760bf5fe16e412d4cdd.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/MotherMaiden/rustling-of-chips-bag-100788.mp3"
+dest_files=[ "res://.import/rustling-of-chips-bag-100788.mp3-a4a3f34978157760bf5fe16e412d4cdd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

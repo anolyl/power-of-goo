@@ -1,0 +1,78 @@
+extends StaticBody2D
+
+signal hasDied
+
+export (PackedScene) var projectileTemplate
+
+onready var muzzle = $ShootFromHere
+
+var projectileParent
+
+var slimed = false
+var target
+
+onready var sprite = $Sprite
+
+func setup_projectileParent(projectileParentIN):
+	projectileParent = projectileParentIN
+	if projectileParent:
+		print(projectileParent)
+	else:
+		print("No Parent!")
+
+func _ready():
+	$AnimationPlayer.play("idle")
+
+func _process(_delta):
+	if target:
+		if target.global_position.x < global_position.x:
+			$Sprite.flip_h = true
+		else:
+			$Sprite.flip_h = false
+
+func collided_with_slimeBall(slimeBall):
+	slimed = true
+	$AnimationPlayer.stop()
+	$SlimedParticle.show()
+	$GetSlimedParticle.emitting = true
+	flash()
+	slimeBall.queue_free()
+
+func collided_with_playerAttack():
+	if slimed:
+		emit_signal("hasDied", global_position)
+		queue_free()
+
+
+func _on_Detection_body_entered(body):
+	if not slimed and body.is_in_group("Player"):
+		target = body
+		$AnimationPlayer.play("attack")
+
+
+func _on_Detection_body_exited(body):
+	if body == target:
+		target = null
+		if not slimed:
+			$AnimationPlayer.play("idle")
+
+<<<<<<< working copy
+func shoot():
+	if target:
+		var newProjectile = projectileTemplate.instance()
+		newProjectile.setup((target.global_position - muzzle.global_position).normalized())
+		newProjectile.global_position = muzzle.global_position
+		
+		projectileParent.add_child(newProjectile)
+=======
+func flash():
+	sprite.material.set_shader_param("flash_modifier", 1)
+	$FlashTimer.start()
+
+
+func _on_FlashTimer_timeout():
+	var current_modifier = sprite.material.get_shader_param("flash_modifier")
+	sprite.material.set_shader_param("flash_modifier", current_modifier - .1)
+	if not current_modifier - .1 <= 0:
+		$FlashTimer.start()
+>>>>>>> merge rev

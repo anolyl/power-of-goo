@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Shaders/caveFog.tres" type="Material" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=16]
+
+[sub_resource type="NoiseTexture" id=17]
+noise = SubResource( 16 )
+
+[node name="Sprite" type="Sprite"]
+material = ExtResource( 1 )
+position = Vector2( 371.058, 72.4023 )
+scale = Vector2( -4.86723, 2.20956 )
+texture = SubResource( 17 )
+offset = Vector2( 67.1959, 38.2871 )

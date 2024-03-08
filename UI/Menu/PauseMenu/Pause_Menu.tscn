@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/Vignette.png" type="Texture" id=2]
+[ext_resource path="res://UI/Menu/ButtonTheme/QuitAndBack.tres" type="Theme" id=3]
+[ext_resource path="res://UI/Menu/PauseMenu/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://UI/Menu/ButtonTheme/Tapes/SingleTape3.png" type="Texture" id=5]
+[ext_resource path="res://UI/Menu/ButtonTheme/NewGameButton.tres" type="Theme" id=6]
+[ext_resource path="res://UI/Menu/OptionsMenu/Options_Menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Pressed/Tape3.png" type="Texture" id=8]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Hover/Tape3.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 9 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 5 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 8 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="Theme" id=8]
+Button/styles/focus = SubResource( 9 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 12 )
+
+[node name="Pause_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1420.0
+margin_bottom = -580.0
+script = ExtResource( 4 )
+optionsMenuTemplate = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.701961 )
+margin_left = -231.0
+margin_right = 1689.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 2.8554, 3.15566 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="PauseMenu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 104.0
+margin_top = 218.0
+margin_right = 495.0
+margin_bottom = 492.0
+custom_constants/separation = 32
+
+[node name="Continue_Container" type="VBoxContainer" parent="PauseMenu"]
+margin_right = 391.0
+margin_bottom = 122.0
+
+[node name="ContinueMarginContainer" type="MarginContainer" parent="PauseMenu/Continue_Container"]
+margin_right = 391.0
+margin_bottom = 122.0
+custom_constants/margin_right = 166
+custom_constants/margin_top = 58
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = -11
+
+[node name="ContinueContainer" type="Button" parent="PauseMenu/Continue_Container/ContinueMarginContainer"]
+margin_left = 20.0
+margin_top = 58.0
+margin_right = 225.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 205, 75 )
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Resume"
+icon_align = 1
+
+[node name="OptionsContainer" type="VBoxContainer" parent="PauseMenu"]
+margin_top = 154.0
+margin_right = 391.0
+margin_bottom = 196.0
+
+[node name="OptionsMarginContainer" type="MarginContainer" parent="PauseMenu/OptionsContainer"]
+margin_right = 391.0
+margin_bottom = 42.0
+custom_constants/margin_right = 181
+custom_constants/margin_top = -6
+custom_constants/margin_left = 11
+custom_constants/margin_bottom = -2
+
+[node name="OptionsButton" type="Button" parent="PauseMenu/OptionsContainer/OptionsMarginContainer"]
+margin_left = 11.0
+margin_top = -6.0
+margin_right = 210.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Options"
+
+[node name="QuitContainer" type="VBoxContainer" parent="PauseMenu"]
+margin_top = 228.0
+margin_right = 391.0
+margin_bottom = 274.0
+
+[node name="QuitMarginContainer" type="MarginContainer" parent="PauseMenu/QuitContainer"]
+margin_right = 391.0
+margin_bottom = 46.0
+custom_constants/margin_right = 211
+custom_constants/margin_top = 6
+custom_constants/margin_left = 51
+
+[node name="QuitButton" type="Button" parent="PauseMenu/QuitContainer/QuitMarginContainer"]
+margin_left = 51.0
+margin_top = 6.0
+margin_right = 180.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Quit"
+
+[connection signal="pressed" from="PauseMenu/Continue_Container/ContinueMarginContainer/ContinueContainer" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsContainer/OptionsMarginContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitContainer/QuitMarginContainer/QuitButton" to="." method="_on_MainMenuButton_pressed"]

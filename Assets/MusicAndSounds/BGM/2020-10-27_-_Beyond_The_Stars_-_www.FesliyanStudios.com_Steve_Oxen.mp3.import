@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2020-10-27_-_Beyond_The_Stars_-_www.FesliyanStudios.com_Steve_Oxen.mp3-7ba2fa15a257de99478500ba6bae518b.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/BGM/2020-10-27_-_Beyond_The_Stars_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+dest_files=[ "res://.import/2020-10-27_-_Beyond_The_Stars_-_www.FesliyanStudios.com_Steve_Oxen.mp3-7ba2fa15a257de99478500ba6bae518b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

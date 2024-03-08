@@ -1,0 +1,1006 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Assets/Scripts/shaker.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scenes/Levels/Tutorial_Room_new.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scripts/experimentals.gd" type="Script" id=3]
+[ext_resource path="res://Main/main.gd" type="Script" id=4]
+[ext_resource path="res://UI/Menu/PauseMenu/Pause_Menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Main/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Menu/ButtonTheme/NewGameButton.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/MusicAndSounds/BGM/GameMusic_nightmare by Tausdei Music.wav" type="AudioStream" id=8]
+[ext_resource path="res://UI/Menu/ButtonTheme/QuitAndBack.tres" type="Theme" id=9]
+[ext_resource path="res://Main/saveManager.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Scenes/Enemies/HitEffect.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Scenes/Cranberry.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Scenes/Particles/BackgroundBats.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Hover/Tape3.png" type="Texture" id=14]
+[ext_resource path="res://UI/Menu/ButtonTheme/Tapes/SingleTape3.png" type="Texture" id=15]
+[ext_resource path="res://UI/MainMenu/ButtonTheme/Tapes/Pressed/Tape3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Keybinds/key_E.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://UI/Menu/ButtonTheme/Settings.tres" type="Theme" id=19]
+[ext_resource path="res://Assets/Sprites/Keybinds/key_D.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Keybinds/shift.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/Keybinds/key_A.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/Keybinds/key_Q.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites/Keybinds/mouse_L.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/Keybinds/space.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/Keybinds/mouse_R.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Vignette.png" type="Texture" id=27]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+
+[sub_resource type="Animation" id=2]
+resource_name = "camera_shake"
+length = 0.5
+step = 0.125
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade_to_black"
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+tonemap_mode = 3
+tonemap_exposure = 0.16
+tonemap_white = 0.32
+auto_exposure_scale = 0.07
+dof_blur_far_enabled = true
+dof_blur_far_distance = 621.0
+dof_blur_far_transition = 58.51
+dof_blur_far_amount = 0.86
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.86
+dof_blur_near_amount = 0.2
+dof_blur_near_quality = 2
+glow_enabled = true
+glow_levels/1 = true
+glow_intensity = 7.32
+glow_strength = 0.93
+glow_bloom = 0.05
+glow_blend_mode = 0
+glow_hdr_threshold = 1.11
+glow_hdr_luminance_cap = 38.11
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+adjustment_brightness = 6.2
+adjustment_contrast = 1.15
+adjustment_saturation = 1.65
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.0129032, 0.503226, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 3500, 2000, 1 )
+flag_disable_z = true
+direction = Vector3( 1, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 19.8
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+color_ramp = SubResource( 7 )
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture2D" id=9]
+gradient = SubResource( 8 )
+fill = 1
+fill_from = Vector2( 0.5, 0.48222 )
+fill_to = Vector2( 0.448276, 0.433728 )
+
+[sub_resource type="DynamicFont" id=108]
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxEmpty" id=104]
+
+[sub_resource type="StyleBoxTexture" id=105]
+texture = ExtResource( 14 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=106]
+texture = ExtResource( 15 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="StyleBoxTexture" id=107]
+texture = ExtResource( 16 )
+region_rect = Rect2( 228.316, 457.684, 535.789, 174.737 )
+
+[sub_resource type="Theme" id=109]
+Button/styles/focus = SubResource( 104 )
+Button/styles/hover = SubResource( 105 )
+Button/styles/normal = SubResource( 106 )
+Button/styles/pressed = SubResource( 107 )
+
+[sub_resource type="DynamicFont" id=114]
+size = 20
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=110]
+size = 12
+font_data = ExtResource( 18 )
+
+[sub_resource type="Theme" id=111]
+
+[sub_resource type="DynamicFont" id=112]
+size = 13
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=115]
+size = 22
+font_data = ExtResource( 18 )
+
+[node name="main" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+Pause_MenuTemplate = ExtResource( 5 )
+cranberryTemplate = ExtResource( 12 )
+hitEffectTemplate = ExtResource( 11 )
+cranberryDroprate = 1.0
+
+[node name="Cranberries" type="Node2D" parent="."]
+
+[node name="ProjectileParent" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+color = Color( 0.45098, 0.635294, 0.568627, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/camera_shake = SubResource( 2 )
+anims/fade_to_black = SubResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="CaveParticles" type="Particles2D" parent="."]
+position = Vector2( 954, -80 )
+amount = 1000
+lifetime = 5.0
+visibility_rect = Rect2( -3500, -1000, 7000, 3000 )
+process_material = SubResource( 5 )
+texture = SubResource( 9 )
+
+[node name="BackgroundBats" parent="." instance=ExtResource( 13 )]
+
+[node name="CurrentLevel" type="Node2D" parent="."]
+pause_mode = 1
+
+[node name="Tutorial_Room_new_placeholder" parent="CurrentLevel" instance=ExtResource( 2 )]
+rotation = -0.00198389
+
+[node name="ImpactPauseTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Libraries" type="Node2D" parent="."]
+scale = Vector2( 1.11734, 0.761114 )
+
+[node name="shaker" type="Node2D" parent="Libraries"]
+script = ExtResource( 1 )
+
+[node name="experiments" type="Node2D" parent="Libraries"]
+script = ExtResource( 3 )
+cameraZoomZones = true
+
+[node name="saveManager" type="Node2D" parent="Libraries"]
+script = ExtResource( 10 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -25.0
+autoplay = true
+bus = "Music"
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu"]
+visible = false
+modulate = Color( 1, 1, 1, 0.701961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 27 )
+expand = true
+
+[node name="PauseMenu1" type="VBoxContainer" parent="PauseMenu"]
+visible = false
+margin_right = 676.0
+margin_bottom = 278.0
+custom_constants/separation = 32
+
+[node name="Continue_Container" type="VBoxContainer" parent="PauseMenu/PauseMenu1"]
+margin_right = 676.0
+margin_bottom = 122.0
+
+[node name="ContinueMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu1/Continue_Container"]
+margin_right = 676.0
+margin_bottom = 122.0
+custom_constants/margin_right = 431
+custom_constants/margin_top = 58
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = -11
+
+[node name="ContinueButton" type="Button" parent="PauseMenu/PauseMenu1/Continue_Container/ContinueMarginContainer"]
+margin_left = 40.0
+margin_top = 58.0
+margin_right = 245.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 205, 75 )
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Resume"
+icon_align = 1
+
+[node name="OptionsContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu1"]
+margin_top = 154.0
+margin_right = 676.0
+margin_bottom = 196.0
+
+[node name="OptionsMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu1/OptionsContainer"]
+margin_right = 676.0
+margin_bottom = 42.0
+custom_constants/margin_right = 431
+custom_constants/margin_top = -6
+custom_constants/margin_left = 35
+custom_constants/margin_bottom = -2
+
+[node name="OptionsButton" type="Button" parent="PauseMenu/PauseMenu1/OptionsContainer/OptionsMarginContainer"]
+margin_left = 35.0
+margin_top = -6.0
+margin_right = 245.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 109 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Options"
+
+[node name="QuitContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu1"]
+margin_top = 228.0
+margin_right = 676.0
+margin_bottom = 274.0
+
+[node name="QuitMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu1/QuitContainer"]
+margin_right = 676.0
+margin_bottom = 46.0
+custom_constants/margin_right = 431
+custom_constants/margin_top = 6
+custom_constants/margin_left = 71
+
+[node name="QuitButton" type="Button" parent="PauseMenu/PauseMenu1/QuitContainer/QuitMarginContainer"]
+margin_left = 71.0
+margin_top = 6.0
+margin_right = 245.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Quit"
+
+[node name="PauseMenu2" type="VBoxContainer" parent="PauseMenu"]
+visible = false
+margin_right = 676.0
+margin_bottom = 278.0
+custom_constants/separation = -1
+
+[node name="OptionsContainer2" type="VBoxContainer" parent="PauseMenu/PauseMenu2"]
+margin_right = 676.0
+margin_bottom = 78.0
+
+[node name="OptionMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu2/OptionsContainer2"]
+margin_right = 676.0
+margin_bottom = 78.0
+custom_constants/margin_right = 420
+custom_constants/margin_top = 38
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 15
+
+[node name="OptionsLabel" type="Label" parent="PauseMenu/PauseMenu2/OptionsContainer2/OptionMarginContainer"]
+margin_left = 40.0
+margin_top = 38.0
+margin_right = 256.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 150, 25 )
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 114 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="SoundContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu2"]
+margin_top = 77.0
+margin_right = 676.0
+margin_bottom = 127.0
+
+[node name="SoundMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu2/SoundContainer"]
+margin_right = 676.0
+margin_bottom = 50.0
+custom_constants/margin_right = 431
+custom_constants/margin_left = 35
+custom_constants/margin_bottom = 0
+
+[node name="SoundButton" type="Button" parent="PauseMenu/PauseMenu2/SoundContainer/SoundMarginContainer"]
+margin_left = 35.0
+margin_right = 245.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 109 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Sound"
+
+[node name="VideoContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu2"]
+margin_top = 126.0
+margin_right = 676.0
+margin_bottom = 176.0
+
+[node name="VideoMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu2/VideoContainer"]
+margin_right = 676.0
+margin_bottom = 50.0
+custom_constants/margin_right = 431
+custom_constants/margin_top = 10
+custom_constants/margin_left = 71
+
+[node name="VideoButton" type="Button" parent="PauseMenu/PauseMenu2/VideoContainer/VideoMarginContainer"]
+margin_left = 71.0
+margin_top = 10.0
+margin_right = 245.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Video"
+
+[node name="ControlContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu2"]
+margin_top = 175.0
+margin_right = 676.0
+margin_bottom = 225.0
+
+[node name="ControlMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu2/ControlContainer"]
+margin_right = 676.0
+margin_bottom = 50.0
+custom_constants/margin_right = 431
+custom_constants/margin_top = -5
+custom_constants/margin_left = 35
+custom_constants/margin_bottom = 5
+
+[node name="ControlButton" type="Button" parent="PauseMenu/PauseMenu2/ControlContainer/ControlMarginContainer"]
+margin_left = 35.0
+margin_top = -5.0
+margin_right = 245.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 150, 50 )
+theme = SubResource( 109 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Controls"
+
+[node name="BackContainer" type="VBoxContainer" parent="PauseMenu/PauseMenu2"]
+margin_top = 224.0
+margin_right = 676.0
+margin_bottom = 264.0
+
+[node name="BackMarginContainer" type="MarginContainer" parent="PauseMenu/PauseMenu2/BackContainer"]
+margin_right = 676.0
+margin_bottom = 40.0
+custom_constants/margin_right = 431
+custom_constants/margin_left = 71
+
+[node name="BackButton" type="Button" parent="PauseMenu/PauseMenu2/BackContainer/BackMarginContainer"]
+margin_left = 71.0
+margin_right = 245.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 128, 40 )
+theme = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "Back"
+
+[node name="Sub_Options_Sound_Buttons" type="VBoxContainer" parent="PauseMenu"]
+visible = false
+margin_left = 252.5
+margin_top = 5.5
+margin_right = 556.5
+margin_bottom = 283.5
+custom_constants/separation = 75
+
+[node name="MasterVolumeMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons"]
+margin_right = 304.0
+margin_bottom = 96.0
+custom_constants/margin_top = 80
+custom_constants/margin_left = 80
+
+[node name="MasterVolumeHBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer"]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 304.0
+margin_bottom = 96.0
+
+[node name="Master_Volume_Label" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_right = 82.0
+margin_bottom = 16.0
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label"]
+margin_right = 82.0
+margin_bottom = 14.0
+custom_constants/margin_right = 7
+
+[node name="MasterVolume" type="Label" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label/MasterMarginContainer"]
+margin_right = 75.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+custom_fonts/font = SubResource( 110 )
+text = "Master Volume"
+align = 1
+valign = 1
+
+[node name="Master_Volume_Slider_Container" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_left = 86.0
+margin_right = 224.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="MasterVolumeSlider" type="HSlider" parent="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[node name="MusicVolumeMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons"]
+margin_top = 171.0
+margin_right = 304.0
+margin_bottom = 187.0
+custom_constants/margin_left = 80
+
+[node name="MusicHBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer"]
+margin_left = 80.0
+margin_right = 304.0
+margin_bottom = 16.0
+
+[node name="MusicVolumeLabel" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer"]
+margin_right = 81.0
+margin_bottom = 16.0
+
+[node name="MusicMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeLabel"]
+margin_right = 81.0
+margin_bottom = 14.0
+custom_constants/margin_right = 11
+
+[node name="MusicVolume" type="Label" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeLabel/MusicMarginContainer"]
+margin_right = 70.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+custom_fonts/font = SubResource( 110 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="MusicVolumeSliderContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer"]
+margin_left = 85.0
+margin_right = 223.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="MusicMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="MusicVolumeSlider" type="HSlider" parent="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer/MusicMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons"]
+margin_top = 262.0
+margin_right = 304.0
+margin_bottom = 278.0
+custom_constants/margin_left = 80
+
+[node name="SFXHBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer"]
+margin_left = 80.0
+margin_right = 304.0
+margin_bottom = 16.0
+
+[node name="SFXVolumeLabel" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer"]
+margin_right = 74.0
+margin_bottom = 16.0
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeLabel"]
+margin_right = 74.0
+margin_bottom = 14.0
+custom_constants/margin_right = 7
+
+[node name="SFXVolume" type="Label" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeLabel/SFXMarginContainer"]
+margin_right = 67.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+custom_fonts/font = SubResource( 110 )
+text = "SFX Volume"
+align = 1
+valign = 1
+
+[node name="SFXVolumeSliderContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer"]
+margin_left = 78.0
+margin_right = 216.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="SFXVolumeSlider" type="HSlider" parent="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer/SFXMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+theme = SubResource( 111 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[node name="Sub_Options_Video_Buttons" type="VBoxContainer" parent="PauseMenu"]
+visible = false
+margin_left = 272.0
+margin_top = 2.0
+margin_right = 645.0
+margin_bottom = 362.0
+custom_constants/separation = 75
+
+[node name="MasterVolumeMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Video_Buttons"]
+margin_right = 373.0
+margin_bottom = 144.0
+custom_constants/margin_top = 120
+custom_constants/margin_left = 80
+
+[node name="MasterVolumeHBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer"]
+margin_left = 80.0
+margin_top = 120.0
+margin_right = 373.0
+margin_bottom = 144.0
+
+[node name="Master_Volume_Label" type="VBoxContainer" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_right = 61.0
+margin_bottom = 24.0
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label"]
+margin_right = 61.0
+margin_bottom = 19.0
+custom_constants/margin_right = 7
+custom_constants/margin_top = 4
+
+[node name="MasterVolume" type="Label" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label/MasterMarginContainer"]
+margin_top = 4.0
+margin_right = 54.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+custom_fonts/font = SubResource( 112 )
+text = "Borderless"
+align = 1
+valign = 1
+
+[node name="Master_Volume_Slider_Container" type="VBoxContainer" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_left = 65.0
+margin_right = 147.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container"]
+margin_right = 82.0
+margin_bottom = 24.0
+custom_constants/margin_left = 58
+
+[node name="FullScreenCheckbox" type="CheckBox" parent="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer"]
+margin_left = 58.0
+margin_right = 82.0
+margin_bottom = 24.0
+align = 1
+icon_align = 1
+
+[node name="Sub_Options_Control" type="VBoxContainer" parent="PauseMenu"]
+visible = false
+margin_left = 393.0
+margin_top = -0.5
+margin_right = 668.0
+margin_bottom = 481.5
+rect_scale = Vector2( 0.75, 0.75 )
+
+[node name="Movement" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Movement"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 64.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_right = 132.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 22 )
+
+[node name="TextureRect2" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 20 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer"]
+margin_left = 136.0
+margin_right = 239.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer2"]
+margin_right = 103.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 12
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Movement/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 12.0
+margin_top = 23.0
+margin_right = 103.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Movement"
+align = 1
+valign = 1
+
+[node name="Jump" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 68.0
+margin_right = 275.0
+margin_bottom = 132.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Jump"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer"]
+margin_right = 138.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer/VBoxContainer"]
+margin_right = 138.0
+margin_bottom = 64.0
+custom_constants/margin_left = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 10.0
+margin_right = 138.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 128.0
+margin_bottom = 64.0
+texture = ExtResource( 25 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer"]
+margin_left = 142.0
+margin_right = 230.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer/VBoxContainer2"]
+margin_right = 88.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 33
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Jump/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 33.0
+margin_top = 23.0
+margin_right = 88.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Jump"
+align = 1
+valign = 1
+
+[node name="Interact" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 136.0
+margin_right = 275.0
+margin_bottom = 200.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Interact"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer/VBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+custom_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 17 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer"]
+margin_left = 108.0
+margin_right = 229.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer/VBoxContainer2"]
+margin_right = 121.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 50
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Interact/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 50.0
+margin_top = 23.0
+margin_right = 121.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Interact"
+align = 1
+valign = 1
+
+[node name="ConsumeCranberry" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 204.0
+margin_right = 275.0
+margin_bottom = 268.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer/VBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+custom_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 23 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer"]
+margin_left = 108.0
+margin_right = 268.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer/VBoxContainer2"]
+margin_right = 160.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 29
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/ConsumeCranberry/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 29.0
+margin_top = 23.0
+margin_right = 160.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Eat Cranberry"
+align = 1
+valign = 1
+
+[node name="Punch" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 272.0
+margin_right = 275.0
+margin_bottom = 336.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Punch"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer/VBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+custom_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 24 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer"]
+margin_left = 108.0
+margin_right = 228.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer/VBoxContainer2"]
+margin_right = 120.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 62
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Punch/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 62.0
+margin_top = 23.0
+margin_right = 120.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Punch"
+align = 1
+valign = 1
+
+[node name="Spit" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 340.0
+margin_right = 275.0
+margin_bottom = 404.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Spit"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer/VBoxContainer"]
+margin_right = 104.0
+margin_bottom = 64.0
+custom_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_right = 104.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 26 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer"]
+margin_left = 108.0
+margin_right = 215.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer/VBoxContainer2"]
+margin_right = 107.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 72
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Spit/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 72.0
+margin_top = 23.0
+margin_right = 107.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Spit"
+align = 1
+valign = 1
+
+[node name="Puddle" type="MarginContainer" parent="PauseMenu/Sub_Options_Control"]
+margin_top = 408.0
+margin_right = 275.0
+margin_bottom = 472.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Puddle"]
+margin_right = 275.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer"]
+margin_right = 138.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer/VBoxContainer"]
+margin_right = 138.0
+margin_bottom = 64.0
+custom_constants/margin_left = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 10.0
+margin_right = 138.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_right = 128.0
+margin_bottom = 64.0
+texture = ExtResource( 21 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer"]
+margin_left = 142.0
+margin_right = 234.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer/VBoxContainer2"]
+margin_right = 92.0
+margin_bottom = 48.0
+custom_constants/margin_top = 23
+custom_constants/margin_left = 26
+
+[node name="Label" type="Label" parent="PauseMenu/Sub_Options_Control/Puddle/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_left = 26.0
+margin_top = 23.0
+margin_right = 92.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 115 )
+text = "Puddle"
+align = 1
+valign = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="ImpactPauseTimer" to="." method="_on_ImpactPauseTimer_timeout"]
+[connection signal="finished" from="BGM" to="." method="_on_BGM_finished"]
+[connection signal="pressed" from="PauseMenu/PauseMenu1/Continue_Container/ContinueMarginContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu1/OptionsContainer/OptionsMarginContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu1/QuitContainer/QuitMarginContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu2/SoundContainer/SoundMarginContainer/SoundButton" to="." method="_on_SoundButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu2/VideoContainer/VideoMarginContainer/VideoButton" to="." method="_on_VideoButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu2/ControlContainer/ControlMarginContainer/ControlButton" to="." method="_on_ControlButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseMenu2/BackContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="value_changed" from="PauseMenu/Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer/MasterVolumeSlider" to="." method="_on_MasterVolumeSlider_value_changed"]
+[connection signal="value_changed" from="PauseMenu/Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer/MusicMarginContainer/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
+[connection signal="value_changed" from="PauseMenu/Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer/SFXMarginContainer/SFXVolumeSlider" to="." method="_on_SFXVolumeSlider_value_changed"]
+[connection signal="toggled" from="PauseMenu/Sub_Options_Video_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer/FullScreenCheckbox" to="." method="_on_FullScreenCheckbox_toggled"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/growl_0.mp3-40853f2387c9e1e6ad5db65a5caa46c9.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/FlyingEnemy/growl_0.mp3"
+dest_files=[ "res://.import/growl_0.mp3-40853f2387c9e1e6ad5db65a5caa46c9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

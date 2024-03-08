@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fonts/Beyond Wonderland.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Menu/OptionsMenu/SubOptions/SubOptionsSound/Sub_Options_Sound.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=5]
+
+[node name="Sub_Options_Sound" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Sub_Options_Sound_Buttons" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -374.0
+margin_top = -182.0
+margin_right = -1.0
+margin_bottom = 178.0
+custom_constants/separation = 75
+
+[node name="MasterVolumeMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons"]
+margin_right = 373.0
+margin_bottom = 96.0
+custom_constants/margin_top = 80
+custom_constants/margin_left = 80
+
+[node name="MasterVolumeHBoxContainer" type="HBoxContainer" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer"]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 373.0
+margin_bottom = 96.0
+
+[node name="Master_Volume_Label" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_right = 82.0
+margin_bottom = 16.0
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label"]
+margin_right = 82.0
+margin_bottom = 14.0
+custom_constants/margin_right = 7
+
+[node name="MasterVolume" type="Label" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Label/MasterMarginContainer"]
+margin_right = 75.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Master Volume"
+align = 1
+valign = 1
+
+[node name="Master_Volume_Slider_Container" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer"]
+margin_left = 86.0
+margin_right = 224.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="MasterMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[node name="MusicVolumeMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons"]
+margin_top = 171.0
+margin_right = 373.0
+margin_bottom = 187.0
+custom_constants/margin_left = 80
+
+[node name="MusicHBoxContainer" type="HBoxContainer" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer"]
+margin_left = 80.0
+margin_right = 373.0
+margin_bottom = 16.0
+
+[node name="MusicVolumeLabel" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer"]
+margin_right = 81.0
+margin_bottom = 16.0
+
+[node name="MusicMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeLabel"]
+margin_right = 81.0
+margin_bottom = 14.0
+custom_constants/margin_right = 11
+
+[node name="MusicVolume" type="Label" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeLabel/MusicMarginContainer"]
+margin_right = 70.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="MusicVolumeSliderContainer" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer"]
+margin_left = 85.0
+margin_right = 223.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="MusicMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer/MusicMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons"]
+margin_top = 262.0
+margin_right = 373.0
+margin_bottom = 278.0
+custom_constants/margin_left = 80
+
+[node name="SFXHBoxContainer" type="HBoxContainer" parent="Sub_Options_Sound_Buttons/SFXMarginContainer"]
+margin_left = 80.0
+margin_right = 373.0
+margin_bottom = 16.0
+
+[node name="SFXVolumeLabel" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer"]
+margin_right = 74.0
+margin_bottom = 16.0
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeLabel"]
+margin_right = 74.0
+margin_bottom = 14.0
+custom_constants/margin_right = 7
+
+[node name="SFXVolume" type="Label" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeLabel/SFXMarginContainer"]
+margin_right = 67.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "SFX Volume"
+align = 1
+valign = 1
+
+[node name="SFXVolumeSliderContainer" type="VBoxContainer" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer"]
+margin_left = 78.0
+margin_right = 216.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="SFXMarginContainer" type="MarginContainer" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_constants/margin_right = -12
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer/SFXMarginContainer"]
+margin_right = 150.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 150, 0 )
+theme = SubResource( 5 )
+min_value = -30.0
+max_value = 10.0
+value = 10.0
+
+[connection signal="value_changed" from="Sub_Options_Sound_Buttons/MasterVolumeMarginContainer/MasterVolumeHBoxContainer/Master_Volume_Slider_Container/MasterMarginContainer/MasterVolumeSlider" to="." method="_on_MasterVolumeSlider_value_changed"]
+[connection signal="value_changed" from="Sub_Options_Sound_Buttons/MusicVolumeMarginContainer/MusicHBoxContainer/MusicVolumeSliderContainer/MusicMarginContainer/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
+[connection signal="value_changed" from="Sub_Options_Sound_Buttons/SFXMarginContainer/SFXHBoxContainer/SFXVolumeSliderContainer/SFXMarginContainer/SFXVolumeSlider" to="." method="_on_SFXVolumeSlider_value_changed"]

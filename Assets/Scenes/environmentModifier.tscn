@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Scenes/Levels/environmentModifier.gd" type="Script" id=1]
+
+[node name="environmentModifier" type="Node2D"]
+position = Vector2( -4, 0 )
+script = ExtResource( 1 )
+tonemapExposure = 0.018
+tonemapWhite = 0.043
+glowBloom = 0.152
+glowIntensity = 0.327
+glowStrength = 1.002
+vignetteIntensity = 1.148

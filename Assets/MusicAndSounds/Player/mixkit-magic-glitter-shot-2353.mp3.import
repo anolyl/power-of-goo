@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-magic-glitter-shot-2353.mp3-27754bfd396f9bdadfc66c7d86a21ac7.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/Player/mixkit-magic-glitter-shot-2353.mp3"
+dest_files=[ "res://.import/mixkit-magic-glitter-shot-2353.mp3-27754bfd396f9bdadfc66c7d86a21ac7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

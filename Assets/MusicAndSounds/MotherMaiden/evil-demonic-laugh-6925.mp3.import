@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/evil-demonic-laugh-6925.mp3-9399f444efd17c84b307920bda16c36d.mp3str"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/MotherMaiden/evil-demonic-laugh-6925.mp3"
+dest_files=[ "res://.import/evil-demonic-laugh-6925.mp3-9399f444efd17c84b307920bda16c36d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GameMusic_nightmare by Tausdei Music.wav-adb362f337910bcab6af1b2b4ae64e01.sample"
+
+[deps]
+
+source_file="res://Assets/MusicAndSounds/BGM/GameMusic_nightmare by Tausdei Music.wav"
+dest_files=[ "res://.import/GameMusic_nightmare by Tausdei Music.wav-adb362f337910bcab6af1b2b4ae64e01.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

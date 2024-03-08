@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Sprites/Particles/bat.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=10]
+particles_animation = true
+particles_anim_h_frames = 25
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="ParticlesMaterial" id=11]
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 2.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0, 0, 0, 1 )
+anim_speed = 300.0
+
+[node name="BackgroundBats" type="Particles2D"]
+modulate = Color( 0, 0, 0, 1 )
+material = SubResource( 10 )
+position = Vector2( -2543, 195 )
+scale = Vector2( -0.25, 0.25 )
+amount = 5
+lifetime = 100.0
+explosiveness = 0.92
+visibility_rect = Rect2( -650000, -2000, 650000, 3000 )
+process_material = SubResource( 11 )
+texture = ExtResource( 1 )
